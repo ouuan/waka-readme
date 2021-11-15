@@ -51,7 +51,7 @@ def get_stats() -> str:
     '''Gets API data and returns markdown progress'''
     encoded_key: str = str(base64.b64encode(waka_key.encode('utf-8')), 'utf-8')
     data = requests.get(
-        f"{api_base_url.rstrip('/')}/v1/users/current/stats/last_7_days",
+        f"{api_base_url.rstrip('/')}/v1/users/current/stats/last_30_days",
         headers={
             "Authorization": f"Basic {encoded_key}"
         }).json()
